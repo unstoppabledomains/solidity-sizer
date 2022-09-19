@@ -1,0 +1,25 @@
+{
+  "name": "solidity-sizer",
+  "version": "0.1.0",
+  "description": "A GitHub action that comments the pull request with the size of the Solidity contracts.",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unstoppabledomains/solidity-sizer.git"
+  },
+  "scripts": {
+    "build": "ncc build src/main.ts",
+    "prettier:check": "prettier --check --config .prettierrc --ignore-path .prettierignore \"./*.{ts,tsx,js,jsx,json,md}\"",
+    "prettier:fix": "prettier --write -l --config .prettierrc --ignore-path .prettierignore \"./*.{ts,tsx,js,jsx,json,md}\" "
+  },
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/github": "^5.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@vercel/ncc": "^0.34.0",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3"
+  }
+}
