@@ -4,7 +4,7 @@ inputs:
   GITHUB_TOKEN:
     description: 'Github token of the repository'
     required: true
-  sizeCommand:
+  command:
     description: 'Command that will run hardhat size-contracts'
     required: true
     default: 'yarn run hardhat size-contracts'

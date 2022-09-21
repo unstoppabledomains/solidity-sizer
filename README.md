@@ -87,4 +87,4 @@ on: pull_request
 | Name           | Description                                  | Required | Default                         |
 | -------------- | -------------------------------------------- | -------- | ------------------------------- |
 | `GITHUB_TOKEN` | Token that is used to create comment         | ✅       |                                 |
-| `sizeCommand`  | Command that will run hardhat size-contracts |          | yarn run hardhat size-contracts |
+| `command`      | Command that will run hardhat size-contracts |          | yarn run hardhat size-contracts |

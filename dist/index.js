@@ -9541,7 +9541,7 @@ const REPORT_HEADER = `# Contracts size report
 |-|-|-|
 `;
 const githubToken = core.getInput('GITHUB_TOKEN');
-const sizeCommand = core.getInput('sizeCommand');
+const command = core.getInput('command');
 const context = github.context;
 const octokit = github.getOctokit(githubToken);
 const removeExistingComment = (prNumber) => __awaiter(void 0, void 0, void 0, function* () {
@@ -9555,7 +9555,6 @@ const removeExistingComment = (prNumber) => __awaiter(void 0, void 0, void 0, fu
                 yield octokit.rest.issues.deleteComment(Object.assign(Object.assign({}, context.repo), { comment_id: comment.id, issue_number: prNumber }));
                 break;
             }
-            ;
         }
     }
     catch (e_1_1) { e_1 = { error: e_1_1 }; }
@@ -9567,22 +9566,15 @@ const removeExistingComment = (prNumber) => __awaiter(void 0, void 0, void 0, fu
     }
 });
 const getContractsSize = () => {
-    const contractsSize = cp.execSync(sizeCommand).toString();
+    const contractsSize = cp.execSync(command).toString();
     if (contractsSize.indexOf('Contract Name') === -1) {
         core.setFailed('Error while executing size-contracts: ' + contractsSize);
         return;
     }
     return contractsSize;
 };
-const diffToNumber = (diff) => {
-    if (diff[0] === '+')
-        return Number(diff.replace('+', ''));
-    if (diff[1] === '-')
-        return -Number(diff.replace('-', ''));
-    return Number(diff);
-};
 const getAlarmIcon = (contractSize) => {
-    if (contractSize * 1000 / MAX_CONTRACT_SIZE * 100 > 100)
+    if (((contractSize * 1000) / MAX_CONTRACT_SIZE) * 100 > 100)
         return '🚫';
     return '';
 };
