@@ -64,7 +64,6 @@ jobs:
 on: pull_request
   contracts-size:
     runs-on: ubuntu-latest
-    needs: target-contracts-size
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
