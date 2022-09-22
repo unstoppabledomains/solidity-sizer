@@ -1,0 +1,13 @@
+name: 'solidity-sizer'
+description: 'Adds comments to the PR with information about the size of Solidity contracts'
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github token of the repository'
+    required: true
+  command:
+    description: 'Command that will run hardhat size-contracts'
+    required: true
+    default: 'yarn run hardhat size-contracts'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

@@ -1,0 +1,12 @@
+# Dotfiles
+.*
+!.*.js
+
+# Node modules
+node_modules
+**/node_modules
+**/@types
+types/cache.json
+
+# Common
+**/dist
