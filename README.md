@@ -53,7 +53,7 @@ jobs:
         with:
           name: hardhat-contract-sizer-output
           path: cache/
-      - uses: unstoppabledomains/solidity-sizer@aslobodian/REG-641
+      - uses: unstoppabledomains/solidity-sizer@v0.1.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -75,7 +75,7 @@ on: pull_request
         with:
           name: hardhat-contract-sizer-output
           path: cache/
-      - uses: unstoppabledomains/solidity-sizer@aslobodian/REG-641
+      - uses: unstoppabledomains/solidity-sizer@v0.1.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
